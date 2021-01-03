@@ -1,0 +1,174 @@
+/* Global */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+}
+
+/* Typography */
+
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 4px 0;
+}
+/* 전체영역 */
+a {
+  /* a태그(haenoo)에 있는 밑줄 삭제 */
+  text-decoration: none;
+  /* navbar에 있는 'aenoo' 글씨색깔 지정 */
+  color: white;
+}
+
+/*-----------------Nav bar--------------- */
+#navbar {
+  /* display관한 정보 참고 https://heropy.blog/2018/11/24/css-flexible-box/ */
+  display: flex;
+  justify-content: space-between;
+  /* 수직빙향으로 가운데 정렬 */
+  align-items: center;
+  /* 배경색 설정 */
+  background-color: #5ebcff;
+  /* 메뉴바 크기 설정 */
+  padding: 15px;
+  /* 글씨색 지정 */
+  color: white;
+}
+
+.navbar__logo {
+  /* Haenoo 글씨 크기 설정 */
+  font-size: 40px;
+  /* Haenoo 글씨 굵기 설정 */
+  font-weight: var(--weight-semi-bold);
+}
+
+.navbar__menu {
+  /* 컨테이너 박스에 flex설정 */
+  display: flex;
+  /* list스타일에 동그라미 제거 */
+  list-style: none;
+  /* 메뉴들이 너무 화면 오른쪽으로 붙지 않도록 마진을 넣음 */
+  margin-right: 40px;
+}
+
+.navbar__menu__item:hover {
+  background-color : #4294ff;
+  transition: all 300ms ease-in;
+  border-radius: 8px;
+}
+
+.navbar__menu__item {
+  /* 메뉴끼리 간격 조절 */
+  margin-left: 30px;
+  /* 마우스를 메뉴아이템어 올렸을 때 손모양으로 변경 */
+  cursor: pointer;
+  /* 메뉴 글씨크기 설정 */
+  font-size: 25px;
+}
+
+/* navbar__menu__item중 active인 것 */
+.navbar__menu__item.active {
+  /* 테두리 설정 */
+  border: solid white 3px;
+  /* 테두리 둥근정도 설정 */
+  border-radius: 4px;
+}
+
+
+/* -----------------Home--------------- */
+
+#home {
+  /* 이미지, 글자, 버튼 등을 모두 가운데 정렬 */
+  text-align: center;
+  /* 배경을 지정 (css개념정리 파일 참고) */
+  background: center/cover no-repeat url(/imgs/bacgroundblue.png);
+}
+
+.home__avatar {
+  /*프사 크기 지정 */
+  width: 500px;
+  height: 500px;
+  /* 프사 테두리 및 모양 설정 */
+  border: solid white 6px;
+  border-radius: 50%;
+  /* 사진이 너무 navbar쪽으로 올라가있으므로 여백을 줌 */
+  margin-top: 80px;
+}
+
+.home__title {
+  /* title 글씨색깔, 굵기 설정 */
+  color:white;
+  font-weight:var(--weight-bold);
+}
+
+.home__description {
+  /* description 글씨크기, 색깔 설정 */
+  color:white;
+  font-size: var(--font-medium);
+}
+
+.home__contact {
+  /* contact me 버튼 크기설정 */
+  width: 200px;
+  height: 70px;
+  /* 버튼 배경을 투명색으로 */
+  background-color: transparent;
+  /* 버튼 테두리 설정 */
+  border : solid white 6px;
+  border-radius: 6px;
+  /* 마우스를 올리면 커서변경 */
+  cursor: pointer;
+  /* 버튼의 위치 설정 */
+  margin: 40px 0;
+  /* 'contact me'글씨크기, 굵기, 색깔 설정 */
+  font-size: var(--font-medium);
+  color: white;
+  font-weight: var(--weight-bold);
+  /* 클릭을 하면 라인이 남는 것을 방지 (!***중요 몰랐던 거임***!) */
+  outline:none;
+}

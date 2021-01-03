@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name ="description" content = "Haenoo's Portfolio">
     <meta name = "author" content="Haenoo">
-
+    
     <!-- fontawsome -> 사람모양 아이콘 ->kit에 들어가서 내 번호 복사 -->
     <script src="https://kit.fontawesome.com/6abef6a9e3.js" crossorigin="anonymous"></script>
 
-    
-    <!-- google 폰트에 접속해서 폰트 선택후 embed에 들어가서 코드 복사. -->
+    <!-- google 폰트에 접속해서 폰트 선택 후 embed에 들어가서 코드 복사. -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
     
     <!-- 사이트 로고설정하기 -->
@@ -19,6 +18,7 @@
     <script src="main.js" defer></script>
     <title>Haenoo's Portfolio</title>
 </head>
+
 <body>
     <!-- nav bar -->
     <navbar id="navbar">
@@ -27,7 +27,7 @@
             <a href="#">Haenoo</a>
         </div>
             <ul class="navbar__menu">
-                <li class="navbar__menu__item">Home</li>
+                <li class="navbar__menu__item active">Home</li>
                 <li class="navbar__menu__item">About</li>
                 <li class="navbar__menu__item">Skills</li>
                 <li class="navbar__menu__item">Work</li>
@@ -38,10 +38,9 @@
     <!-- Home -->
     <section id="home">
         <img src="/imgs/My.jpg" alt="Haenoo profile" class="home__avatar">
-        <h1 class="home__Title">Hello, <br/>I'm Front-End Engineer</h1>
-        <h2 class="home__description">부경대학교 IT융합응용공학과를 졸업했으며 웹개발을 준비중입니다.</h2>
+        <h1 class="home__title">Hello, <br/>I'm Front-End Engineer</h1>
+        <h2 class="home__description">부경대학교 IT융합응용공학과를 졸업했으며 웹개발자를 준비하고 있습니다.</h2>
         <button class="home__contact">Contact me</button>
-
     </section>
 
     <!-- about me -->
@@ -79,11 +78,11 @@
             <p class="major__description">바닐라 자바스크립트를 사용할 수 있습니다.</p>
         </div>
 
-        <div class="universe">
-            <img src="/imgs/pknu.jpg" alt="pknu">
-            <p class="description">부경대학교 IT융합응용공학과를 졸업하였습니다.</p>
-        </div>
     </section>
+    <div class="universe">
+        <img src="/imgs/pknu.jpg" alt="pknu">
+        <p class="description">부경대학교 IT융합응용공학과를 졸업하였습니다.</p>
+    </div>
     
     <!-- skills -->
     <section id="skills">
