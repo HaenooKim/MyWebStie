@@ -374,13 +374,12 @@ ul {
 
 .project:hover .project__description {
   /* 여기 transition이 말을 쳐 안듣는다... 문제가 뭔지 모르겠다. */
-  transition: all 400ms linear;
   background-color: black;
   opacity: 0.8;
   display:flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(0px);
+  transition: all 200ms ease-in;
 }
 
 .project__description {
@@ -389,9 +388,7 @@ ul {
   height: 100%;
   top: 0;
   left:0;
-  display: none;
-  transform:translateY(10px);
-  transition: all 200ms ease-in;
+  opacity: 0;
 }
 
 .project__description h3 {
