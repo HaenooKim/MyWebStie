@@ -332,6 +332,7 @@ ul {
   position: relative;
   top: -20px;
   opacity: 0;
+  color: white;
 }
 
 .category__btn.active .category__count,
@@ -365,6 +366,7 @@ ul {
   width: 400px;
   height: 300px;
   margin:2px 2px;
+  background-color: #d5d7db;
 }
 
 .project__img {
