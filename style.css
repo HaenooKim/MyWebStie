@@ -60,6 +60,7 @@ p {
 /*-----------------Body--------------- */
 body {
   font-family: 'Roboto', sans-serif;
+  margin: auto;
 }
 
 a {
@@ -77,16 +78,28 @@ ul {
 #navbar {
   /* display관한 정보 참고 https://heropy.blog/2018/11/24/css-flexible-box/ */
   display: flex;
+  position: fixed;
+  width: 100%;
   justify-content: space-between;
   /* 수직빙향으로 가운데 정렬 */
   align-items: center;
   /* 배경색 설정 */
-  background-color: #5ebcff;
+  background-color: transparent;
   /* 메뉴바 크기 설정 */
   padding: 15px;
   /* 글씨색 지정 */
   color: white;
 }
+
+/* 스크롤 될때 .navbar__dark를 추가! 여기서 주의할 점은
+반드시 #navbar.navbar__dark로 해야됨! 그냥 navbar__dark로 하면 안됨. */
+#navbar.navbar__dark {
+  background-color: #55b8fa;
+  padding : 15px;
+  transition: all 400ms ease-in;
+  z-index: 1;
+}
+
 
 .navbar__logo {
   /* Haenoo 글씨 크기 설정 */
@@ -101,6 +114,7 @@ ul {
   /* list스타일에 동그라미 제거 */
   list-style: none;
   padding:5px;
+  margin-right: 50px;
 }
 
 .navbar__menu__item:hover {
@@ -152,7 +166,7 @@ ul {
   border: solid white 6px;
   border-radius: 50%;
   /* 사진이 너무 navbar쪽으로 올라가있으므로 여백을 줌 */
-  margin-top: 80px;
+  margin-top: 180px;
 }
 
 .home__title {
@@ -460,12 +474,14 @@ ul {
       display: flex;
       flex-direction: column;
       display: block;
+      background-color:#8ed6ff;
+      width: 100%;
     }
   
     .navbar__logo__hamberger {
       display: block;
       position: absolute;
-      top:26px;
+      top:17px;
       right: 30px;
     }
   
