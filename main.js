@@ -15,6 +15,11 @@ toggle_Btn.addEventListener('click', handle_Toggle_Click); //여기서 주의점
 
 // -----------------Navbar is fixed when scrolling---------------
 const navbar = document.querySelector('#navbar');
+
+//Arrow up 버튼 
+const arrowBtn = document.querySelector('.arrow__up');
+
+
 // getBoundingClientRect()로 위치값을 가져올 수 있다.
 const navbarHeight = navbar.getBoundingClientRect().height;
 
@@ -25,6 +30,7 @@ function handle_navbar_Scroll() {
     if (window.scrollY > navbarHeight) {
         navbar.classList.add('navbar__dark');
         navbar_menu.classList.remove('active__menu');
+
     } else {
         navbar.classList.remove('navbar__dark');
     }
@@ -48,3 +54,38 @@ function handle_item_click(event) {
 }
 
 navbar_scroll_section.addEventListener('click', handle_item_click);
+
+
+// -----------------Contact me Button---------------
+const contactBtn = document.querySelector('.home__contact');
+
+function handle_contactBtn (event) {
+    console.log(event.target.dataset.link); //주의! html에 가서 data-link를 적어줘야 undefine이 안 뜬다.
+    const target = event.target;
+    const link = target.dataset.link;
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior:"smooth"});
+}
+
+contactBtn.addEventListener('click', handle_contactBtn);
+
+// -----------------Transparent home---------------
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+
+function handle_homeOpacity() {
+    //console.log(window.scrollY);
+    //스크롤을 내릴 때 home화면의 투명도를 바꿔줌.
+    const home_opacity = 1-window.scrollY/homeHeight; 
+    home.style.opacity = home_opacity; 
+}
+
+document.addEventListener('scroll', handle_homeOpacity)
+
+
+
+
+
+
+
+// -----------------Arrow up Button---------------

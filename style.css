@@ -496,4 +496,30 @@ ul {
       flex-direction: column;
       align-items: center;
     }
+
+     /* ---Skills--- */
+
+    .etc {
+      background-color: #808080;
+      height: 39%;
+    }
+  }
+
+  /* Arrow up Button */
+
+  .arrow__up {
+    position:fixed;
+    right: 45px;
+    bottom: 30px;
+    font-size:62px;
+    color : #383973;
+    background-color: transparent;
+    outline: none;
+    border : transparent;
+    cursor: pointer;
+    display: none;
+  }
+
+  .arrow__up.activeBtn {
+    display:block;
   }

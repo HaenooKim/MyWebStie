@@ -42,10 +42,14 @@
         
     <!-- Home -->
     <section id="home">
-        <img src="imgs/My.jpg" alt="Haenoo profile" class="home__avatar">
-        <h1 class="home__title">Hello, <br/>I'm Front-End Engineer</h1>
-        <h2 class="home__description">부경대학교 IT융합응용공학과를 졸업했으며 웹 개발자를 준비하고 있습니다.</h2>
-        <button class="home__contact">Contact me</button>
+        <div class="home__container">
+            <img src="imgs/My.jpg" alt="Haenoo profile" class="home__avatar">
+            <h1 class="home__title">Hello, <br/>I'm Front-End Engineer</h1>
+            <h2 class="home__description">부경대학교 IT융합응용공학과를 졸업했으며 웹 개발자를 준비하고 있습니다.</h2>
+            <div class="button"></div>
+            <!-- 스크롤 하기 위해 data-link를 적어준다.-->
+            <button class="home__contact" data-link="#contact">Contact me</button>
+        </div>
     </section>
 
     <!-- About me -->
@@ -241,5 +245,12 @@
             010-8598-0132
         </h3>
     </section>
+
+    <!-- Arrow up Button -->
+    <button class="arrow__up" data-link="#home">
+        <i class="fas fa-arrow-circle-up"></i>
+    </button>
+
+
 </body>
 </html>
