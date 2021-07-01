@@ -254,7 +254,7 @@ ul {
 
 .introduce {
   /* html, css, js 아이콘들과 거리를 띄우기 위해 마진 설정 */
-  margin : 100px 0;
+  margin : 100px 150px;
   /* 디스플레이 설정 */
   display: flex;
   /* 수직 방향 정렬을 할땐 align-items를 사용->글씨를 수직방향에서 중앙으로 가져옴 */
@@ -343,6 +343,10 @@ ul {
   text-align: center;
 }
 
+.work__title {
+  margin-bottom: 0;
+}
+
 /* 버튼 */
 .category__btn {
   background-color: white;
@@ -352,6 +356,7 @@ ul {
   cursor: pointer;
   padding : 8px 60px;
   font-size: 22px;
+  margin-top: 20px;
 }
 
 .category__count {
@@ -480,9 +485,10 @@ ul {
   
     .navbar__logo__hamberger {
       display: block;
-      position: absolute;
+      position: fixed;
       top:17px;
       right: 30px;
+      z-index: 1;
     }
   
     /* ---About me--- */
@@ -517,9 +523,18 @@ ul {
     outline: none;
     border : transparent;
     cursor: pointer;
-    display: none;
+
+    /* display : none으로 하면 transition이 안 먹힌다.(display자체가 애니메이션이 안 먹힘) */
+    /* 따라서 opacity를 0으로 한다. */
+    opacity: 0;
+    /* opacity를 0으로 하더라도 마우스를 갖다대면 커서모양 변경이 일어나므로 none으로 설정 */
+    pointer-events: none;
+    transition: all 300ms linear;
   }
 
   .arrow__up.activeBtn {
-    display:block;
+    /* pointer-events를 none했던것을 되돌려준다. 기본값은 auto임 */
+    pointer-events: fill;
+    /* opacity를 1로 해줘서 버튼이 보이도록 해준다. */
+    opacity: 1;
   }

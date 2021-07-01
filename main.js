@@ -1,6 +1,6 @@
 'use strict';
 
-// -----------------Active Navbar Menu---------------
+// -----------------Active Navbar Menu(media query)---------------
 const toggle_Btn = document.querySelector('.navbar__logo__hamberger');
 const navbar_menu = document.querySelector('.navbar__menu');
 
@@ -15,10 +15,6 @@ toggle_Btn.addEventListener('click', handle_Toggle_Click); //여기서 주의점
 
 // -----------------Navbar is fixed when scrolling---------------
 const navbar = document.querySelector('#navbar');
-
-//Arrow up 버튼 
-const arrowBtn = document.querySelector('.arrow__up');
-
 
 // getBoundingClientRect()로 위치값을 가져올 수 있다.
 const navbarHeight = navbar.getBoundingClientRect().height;
@@ -37,7 +33,6 @@ function handle_navbar_Scroll() {
 }
 
 document.addEventListener('scroll', handle_navbar_Scroll);
-
 
 // -----------------Scroll to section---------------
 const navbar_scroll_section = document.querySelector('.navbar__menu');
@@ -64,6 +59,7 @@ function handle_contactBtn (event) {
     const target = event.target;
     const link = target.dataset.link;
     const scrollTo = document.querySelector(link);
+    // 버튼을 눌렸을때 확 움직이는 것을 방지하기 위해 behavior:"smooth"를 적어줌. 이렇게 하면 스무스하게 스크롤이 내려간다.
     scrollTo.scrollIntoView({behavior:"smooth"});
 }
 
@@ -76,16 +72,34 @@ const homeHeight = home.getBoundingClientRect().height;
 function handle_homeOpacity() {
     //console.log(window.scrollY);
     //스크롤을 내릴 때 home화면의 투명도를 바꿔줌.
-    const home_opacity = 1-window.scrollY/homeHeight; 
+    const home_opacity = 1.2-window.scrollY/homeHeight; 
     home.style.opacity = home_opacity; 
 }
 
 document.addEventListener('scroll', handle_homeOpacity)
 
 
+// -----------------Show Arrow up Button---------------
+const arrowBtn = document.querySelector('.arrow__up');
 
+function handle_scroll_arrowBtn() {
+    if (window.scrollY>=homeHeight-600) {
+        arrowBtn.classList.add('activeBtn');
+    }
+    else {
+        arrowBtn.classList.remove('activeBtn');
+    }
+}
+document.addEventListener('scroll', handle_scroll_arrowBtn);
 
+// -----------------Handle Click Arrow up Button---------------
+function handle_arrowBtn_Clcik(event) {
+    //주의 !! 여기서 data-link는 i태그안에 넣어줘야 함!!
+    console.log(event.target.dataset.link);
+    const target = event.target;
+    const link = target.dataset.link;
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior:"smooth"});
+}
 
-
-
-// -----------------Arrow up Button---------------
+arrowBtn.addEventListener('click', handle_arrowBtn_Clcik);
